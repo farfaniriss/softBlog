@@ -1,0 +1,36 @@
+.fixed-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+    width: 100% !important;
+	background: #363636;
+	color: #fff;
+}
+
+.fixed-header span {
+	font-family: 'Rufina', serif;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.container {
+	flex: 1;
+  }
+
+.footer, .push {
+    height: 100px;
+}
+
+.mat-subheader
+{
+	font-family: 'Oxygen', sans-serif;
+	letter-spacing: 3px;
+}
+
+.mat-list-item
+{
+	font-family: 'Oxygen', sans-serif;
+	font-size: 12px;
+	margin: 0 0 -20px 0;
+}

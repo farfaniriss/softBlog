@@ -1,0 +1,9 @@
+
+    <ul class="mat-typography" fxLayout="column" fxLayout.xs="column">
+        <li *ngFor="let post of entries | async">
+            <p class="post-category">{{post.category}}</p>
+            <a routerLink="/post/{{post.id}}" >{{post.title}}</a>
+            <img src={{post.coverImage}} />
+            <p class="post-content">{{post.content}}</p>
+        </li>
+    </ul>
