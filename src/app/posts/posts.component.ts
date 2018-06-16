@@ -25,7 +25,7 @@ export class PostsComponent implements OnInit {
   ]
 
   constructor(db: AngularFirestore) {
-      this.entries = db.collection('/posts').valueChanges();
+      this.entries = db.collection<Post>('/posts', ref => ref.orderBy('id')).valueChanges();
    }
 
   ngOnInit() { 
