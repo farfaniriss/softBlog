@@ -3,7 +3,7 @@ import { Post } from '../post'
 
 import { Observable } from 'rxjs/Observable';
 import { AngularFirestore } from 'angularfire2/firestore';
-
+import { PostService } from '../post.service'
 
 @Component({
   selector: 'app-posts',
@@ -24,10 +24,14 @@ export class PostsComponent implements OnInit {
     'healthy', 'https://data.whicdn.com/images/297083770/large.jpg'),
   ]
 
-  constructor(db: AngularFirestore) {
+  constructor(db: AngularFirestore, private data: PostService) {
       this.entries = db.collection<Post>('/posts', ref => ref.orderBy('id')).valueChanges();
    }
 
   ngOnInit() { 
+  }
+
+  goPost(post: Post){
+    this.data.updatePostSelection(post);
   }
 }
