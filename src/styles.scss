@@ -5,7 +5,6 @@ body {
     min-height: 100vh;
     flex-direction: column;
     margin: 0; 
-    font-family: 'Oxygen', sans-serif;
 }
 
 @import '~@angular/material/theming';
@@ -19,4 +18,4 @@ $custom-typography: mat-typography-config(
 );
 
 // Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
-@include mat-base-typography($custom-typography);
+// @include mat-base-typography($custom-typography);

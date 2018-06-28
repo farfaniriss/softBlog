@@ -20,6 +20,7 @@ import { AngularFireModule } from 'angularfire2';
 
 import { ScrollingModule } from '@angular/cdk-experimental';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { RelatedPostsComponent } from './related-posts/related-posts.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     PostsComponent,
     NavbarComponent,
     TagsComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    RelatedPostsComponent
   ],
   imports: [
     BrowserModule,

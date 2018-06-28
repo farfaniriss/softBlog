@@ -1,0 +1,9 @@
+<div class="container">
+    <ul class="mat-typography" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" 
+    fxLayoutAlign="start stretch">
+        <li *ngFor="let post of posts | async">
+            <img src={{post.coverImage}} />
+            <a routerLink="/post/{{post.id}}" (click)="goPost(post)" >{{post.title}}</a>
+        </li>
+    </ul>   
+</div>

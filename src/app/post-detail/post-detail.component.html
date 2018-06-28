@@ -1,6 +1,12 @@
-<p>
-  {{post.category}}
+<div class="container" fxLayout="column" fxLayout.xs="column">
+<p class="pre-title">{{post.date}} - {{post.location}}</p>
+<p class="title">
+  {{post.title}}
 </p>
-{{ids}} 
-
-<button (click)="goBack()">go back</button>
+<div class="content" [innerHTML]="post.content"></div>
+<br /> <br /> 
+<!-- <button (click)="goBack()">go back</button> -->
+<app-related-posts
+  [posts] = "relatedPosts">
+</app-related-posts>
+</div>
