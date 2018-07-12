@@ -10,7 +10,8 @@
             "name": "Lanzar Chrome contra localhost",
             "url": "http://localhost:4200",
             "sourceMaps": true,
-            "webRoot": "${workspaceFolder}/src"
+            "webRoot": "${workspaceFolder}/src",
+            "trace": "verbose"
         }
     ]
 }

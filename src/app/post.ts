@@ -7,6 +7,7 @@ export class Post {
         public category: string,
         public coverImage: string,
         public date: string,
-        public location: string
+        public location: string,
+        public thumb: string
     ){}
 }

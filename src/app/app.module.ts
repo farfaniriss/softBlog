@@ -22,6 +22,7 @@ import { ScrollingModule } from '@angular/cdk-experimental';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { RelatedPostsComponent } from './related-posts/related-posts.component';
 
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { RelatedPostsComponent } from './related-posts/related-posts.component';
     FlexLayoutModule,
     ScrollingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

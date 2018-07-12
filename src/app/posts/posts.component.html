@@ -1,11 +1,28 @@
-<div class="mat-typography">
+<div [ngClass]="'mat-typography'">
     <ul fxLayout="column" fxLayout.xs="column">
-        <li *ngFor="let post of entries | async">
+        <li *ngFor="let post of postService.data | async">
             <p class="post-category">{{post.category}}</p>
             <a routerLink="/post/{{post.id}}" (click)="goPost(post)" >{{post.title}}</a>
-            <img src={{post.coverImage}} />
+            
+            <div [ngClass]="'progressive-loading'">
+                <div [ngClass]="'progressive-loading-wrapper'">
+                  <img *ngIf="ready" [ngClass]="'original'" src={{post.coverImage}} />
+                  <img [ngClass]="{'thumb':true, 'hide':ready}" src={{post.thumb}} />
+                </div>
+              </div>
             <p class="post-content">{{post.preview}}</p>
             <p class="mat-typography">Continue reading...</p>
         </li>
+
+        <div
+            infiniteScroll
+            [infiniteScrollDistance]="2"
+            [infiniteScrollThrottle]="1000"
+            (scrolled)="onScroll()">
+        </div>
+
+        <div *ngIf="!postService.finished">
+            Loading more post...
+        </div>
     </ul>
 </div>
