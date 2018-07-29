@@ -24,6 +24,10 @@ import { RelatedPostsComponent } from './related-posts/related-posts.component';
 
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
+import { NgSelectModule, NG_SELECT_DEFAULT_CONFIG } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,9 +49,18 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     ScrollingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    NgSelectModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: NG_SELECT_DEFAULT_CONFIG,
+      useValue: {
+          notFoundText: 'Categoría no encontrada'
+      }
+  }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

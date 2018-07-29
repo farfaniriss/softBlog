@@ -8,6 +8,7 @@ body {
 }
 
 @import '~@angular/material/theming';
+@import "~@ng-select/ng-select/themes/material.theme.css";
 
 // Define a custom typography config that overrides the font-family as well as the
 // `headlines` and `body-1` levels.
@@ -19,3 +20,41 @@ $custom-typography: mat-typography-config(
 
 // Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
 // @include mat-base-typography($custom-typography);
+
+
+//ng-select
+ng-select.searchBar > div {
+  border: 0!important;
+  border-color: white;
+  outline: none;
+  width: 200px!important;
+  color: white!important;
+  }
+  ng-select.searchBar > div > div.single > div.toggle {
+  color: white!important;
+  width: 200px!important;
+  }
+  ng-select.searchBar > div > div.single > div.placeholder {
+  text-align: center;
+  width: 200px!important;
+  max-height: 50px!important;
+  color: white!important;
+  }
+
+  .ng-select.ng-select-focused .ng-select-container .ng-arrow-wrapper .ng-arrow {
+    color: white;
+}
+
+.ng-select .ng-arrow-wrapper .ng-arrow {
+  pointer-events: none;
+  display: inline-block;
+  height: 0;
+  width: 0;
+  color: white;
+  position: relative;
+}
+
+.ng-select .ng-select-container::after{
+  border-color: white;
+  color: white;
+}

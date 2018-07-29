@@ -2,7 +2,7 @@
     <ul fxLayout="column" fxLayout.xs="column">
         <li *ngFor="let post of postService.data | async">
             <p class="post-category">{{post.category}}</p>
-            <a routerLink="/post/{{post.id}}" (click)="goPost(post)" >{{post.title}}</a>
+            <a class="title" routerLink="/post/{{post.id}}" (click)="goPost(post)" >{{post.title}}</a>
             
             <div [ngClass]="'progressive-loading'">
                 <div [ngClass]="'progressive-loading-wrapper'">

@@ -1,13 +1,23 @@
 <mat-toolbar>
     <mat-toolbar-row class="fixed-header">
       <span>So Soft</span>
+      <div style="position: absolute; right: 2.5rem;">
+            <ng-select [items]="category$ | async"
+                 bindLabel="name"
+                 bindValue="id"
+                 class="searchBar"
+                 [(ngModel)]="selectedCategoryId">
+            </ng-select>
+            <img style="position: absolute; right: -1.5rem; top: 1.6rem;" src="../assets/icons/icons8-search-white-20.png">
+        </div>
     </mat-toolbar-row>
 </mat-toolbar>
 <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="50px" fxLayoutWrap  fxLayoutAlign="center start">
   <div fxFlex="60%" fxFlexOrder fxFlexOrder.xs="1">
     <router-outlet></router-outlet>
   </div>
-  <div fxFlex="20%" fxFlexOrder fxFlexOrder.xs="2" >
+  <div fxFlex="20%" fxFlexOrder fxFlexOrder.xs="2" fxLayoutAlign="center center">
+      
       <mat-list>
           <h3 mat-subheader>CATEGORIES</h3>
           <mat-divider></mat-divider>
